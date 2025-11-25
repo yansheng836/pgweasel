@@ -6,8 +6,8 @@ on:
   pull_request:
   push:
     # run only against tags
-    # tags:
-    #   - "*"
+    tags:
+      - "*"
 
 permissions:
   contents: write
@@ -17,6 +17,8 @@ permissions:
 
 jobs:
   goreleaser:
+    # 临时禁用该 job，删除下一行可以恢复
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
