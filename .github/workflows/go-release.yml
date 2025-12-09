@@ -5,6 +5,9 @@ on:
   push:
     tags:
       - 'v*'
+      
+archives:
+  formats: ["zip", "tar.gz"]
 
 jobs:
   goreleaser:
@@ -26,8 +29,6 @@ jobs:
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
-        archives:
-          formats: ["zip", "tar.gz"]
         with:
           args: release --clean
         env:
